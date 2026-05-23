@@ -9,14 +9,17 @@
       "require": "./dist/index.cjs",
       "types": "./dist/index.d.ts"
     },
-    "./styles": "./dist/styles/index.css",
-    "./tailwind": "./tailwind.config.ts"
+    "./tokens":     "./src/tokens/index.css",
+    "./base":       "./src/styles/base.css",
+    "./components": "./src/styles/components.css",
+    "./tailwind":   "./tailwind.config.ts"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
+    "src",
     "tailwind.config.ts"
   ],
   "publishConfig": {

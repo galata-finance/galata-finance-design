@@ -3,7 +3,10 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 // ── Styles (CSS) ─────────────────────────────────────────────────────────────
-import './styles/global.css';
+// CSS consuming app tarafından import edilir:
+// @import "@galata-finance/design/tokens";
+// @import "@galata-finance/design/base";
+// @import "@galata-finance/design/components";
 
 // ── Utilities ────────────────────────────────────────────────────────────────
 export { cn }               from './lib/utils';
