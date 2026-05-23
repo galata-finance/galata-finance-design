@@ -1,0 +1,7 @@
+/* @galata/design — Token barrel
+   Import sırası önemli: colors önce, geri kalanlar bağımsız */
+@import './fonts.css';
+@import './colors.css';
+@import './typography.css';
+@import './shadows.css';
+@import './motion.css';

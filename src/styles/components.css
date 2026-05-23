@@ -1,0 +1,172 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   @galata/design — Component utility classes
+   Token tabanlı, hardcoded renk yok.
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@layer components {
+  /* ── Button gradient ──────────────────────────────────────────────────── */
+  .btn-gradient {
+    background: linear-gradient(
+      135deg,
+      var(--primary) 0%,
+      color-mix(in srgb, var(--primary) 80%, var(--ds-secondary) 20%) 100%
+    );
+    color: var(--primary-foreground);
+  }
+  .btn-gradient:hover {
+    background: linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--primary) 90%, white 10%) 0%,
+      color-mix(in srgb, var(--primary) 72%, var(--ds-secondary) 20%) 100%
+    );
+  }
+
+  /* ── Surface shells ───────────────────────────────────────────────────── */
+  .surface-shell {
+    @apply rounded-2xl bg-surface-high px-5 py-5;
+  }
+
+  .surface-panel {
+    @apply rounded-2xl bg-surface;
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* ── Analytics card ───────────────────────────────────────────────────── */
+  .analytics-card {
+    @apply rounded-2xl bg-card;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .analytics-card-compact {
+    @apply rounded-2xl bg-surface-high;
+  }
+
+  .analytics-table-shell {
+    @apply overflow-hidden rounded-2xl bg-card;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .toolbar-surface {
+    @apply rounded-2xl bg-surface-high px-4 py-3;
+  }
+
+  /* ── Toggle / Segmented option button ────────────────────────────────── */
+  .toggle-option {
+    @apply flex-1 rounded-xl border py-2 text-sm font-semibold transition-colors duration-fast;
+    @apply bg-muted border-border text-muted-foreground;
+    @apply hover:text-foreground;
+  }
+  .toggle-option-active {
+    @apply bg-brand border-brand text-brand-foreground;
+    @apply hover:text-brand-foreground;
+  }
+
+  /* ── Page ambient gradient ────────────────────────────────────────────── */
+  .bg-page-ambient {
+    background:
+      radial-gradient(
+        circle at 20% 10%,
+        color-mix(in srgb, var(--primary) 9%, transparent),
+        transparent 32rem
+      ),
+      radial-gradient(
+        circle at 80% 90%,
+        color-mix(in srgb, var(--ds-tertiary) 7%, transparent),
+        transparent 26rem
+      ),
+      var(--background);
+  }
+
+  /* ── Card surface gradient ────────────────────────────────────────────── */
+  .bg-surface-gradient {
+    background:
+      linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--surface-highest) 4%, transparent) 0%,
+        transparent 100%
+      ),
+      var(--surface);
+  }
+
+  /* ── Page header ambient glow ─────────────────────────────────────────── */
+  .bg-header-ambient {
+    background:
+      radial-gradient(
+        circle at top left,
+        color-mix(in srgb, var(--ds-secondary) 10%, transparent) 0%,
+        transparent 32%
+      ),
+      var(--card);
+  }
+
+  /* ── Auth screens ─────────────────────────────────────────────────────── */
+  .auth-shell {
+    @apply min-h-screen px-4 py-10 bg-page-ambient;
+    display: grid;
+    place-items: center;
+  }
+
+  .auth-card {
+    @apply w-full max-w-sm rounded-2xl bg-card px-6 py-7;
+    box-shadow: var(--shadow-xl);
+  }
+
+  /* ── App & page shells ────────────────────────────────────────────────── */
+  .app-shell {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .page-shell { @apply space-y-6; }
+
+  .page-hero {
+    @apply rounded-2xl bg-card px-5 py-4;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .page-hero-muted {
+    @apply rounded-2xl bg-surface-high px-5 py-5;
+  }
+
+  /* ── Glassmorphism ────────────────────────────────────────────────────── */
+  .glass {
+    background: color-mix(in srgb, var(--surface-high) 80%, transparent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  /* ── Surface container aliases ────────────────────────────────────────── */
+  .surface-container         { background-color: var(--surface); }
+  .surface-container-low     { background-color: var(--surface-low); }
+  .surface-container-high    { background-color: var(--surface-high); }
+  .surface-container-highest { background-color: var(--surface-highest); }
+
+  /* ── Navigation active state ──────────────────────────────────────────── */
+  .nav-active {
+    background-color: color-mix(in srgb, var(--sidebar-primary) 12%, transparent);
+    color: var(--sidebar-primary);
+  }
+}
+
+@layer utilities {
+  /* ── Typography helpers ───────────────────────────────────────────────── */
+  .tabular-nums { font-variant-numeric: tabular-nums; }
+  .positive     { color: var(--gain); }
+  .negative     { color: var(--loss); }
+
+  /* ── Animations ───────────────────────────────────────────────────────── */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      var(--surface-low) 25%,
+      var(--surface-high) 50%,
+      var(--surface-low) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer var(--duration-slower) var(--ease-default) infinite;
+  }
+
+  .value-pulse {
+    animation: value-appear var(--duration-slow) var(--ease-spring) both;
+  }
+}

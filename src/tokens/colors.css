@@ -1,0 +1,158 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   @galata/design — Color Tokens
+   Dark mode (Obsidian Architect) default, light mode (Apple Neutral) override.
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@layer base {
+  /* ── Dark mode — Deep Indigo-Black ──────────────────────────────────────── */
+  :root,
+  .dark {
+    --background:           #08090f;
+    --foreground:           #e8ebf4;
+
+    /* Card / Popover */
+    --card:                 #0f1320;
+    --card-foreground:      #e8ebf4;
+    --popover:              #0f1320;
+    --popover-foreground:   #e8ebf4;
+
+    /* Brand scale */
+    --primary:              #1B56FD;
+    --primary-foreground:   #ffffff;
+    --brand:                #1B56FD;
+    --brand-foreground:     #ffffff;
+
+    /* Semantic surfaces */
+    --secondary:            #161e30;
+    --secondary-foreground: #F5F5F5;
+    --muted:                #0f1320;
+    --muted-foreground:     #5d6b86;
+    --accent:               #1a2845;
+    --accent-foreground:    #e8ebf4;
+
+    /* State colors */
+    --destructive:          #FF5B5B;
+    --gain:                 #6FCF97;
+    --gain-foreground:      #001a0d;
+    --loss:                 #FF5B5B;
+    --loss-foreground:      #1a0008;
+
+    /* Extended semantic */
+    --tertiary:             #7F27FF;
+    --tertiary-foreground:  #ffffff;
+    --success:              #41A67E;
+    --success-foreground:   #ffffff;
+    --warning:              #FF6600;
+    --warning-foreground:   #ffffff;
+
+    /* Borders & inputs */
+    --border:               #1a2035;
+    --input:                #0d1120;
+    --ring:                 #1B56FD;
+
+    /* Surface hierarchy (low → highest) */
+    --surface-low:          #08090f;
+    --surface:              #0f1320;
+    --surface-high:         #162030;
+    --surface-highest:      #1e2d45;
+
+    /* Chart palette */
+    --chart-1:              #1B56FD;   /* primary blue     */
+    --chart-2:              #00FFDE;   /* cyan             */
+    --chart-3:              #3BC1A8;   /* green            */
+    --chart-4:              #7F27FF;   /* violet           */
+    --chart-5:              #FF6600;   /* amber/warning    */
+    --chart-6:              #ec4899;   /* pink             */
+    --chart-7:              #C3110C;   /* red / loss       */
+    --chart-8:              #FFD93D;   /* yellow           */
+
+    /* Sidebar */
+    --sidebar:                    #080c18;
+    --sidebar-foreground:         #e8ebf4;
+    --sidebar-primary:            #1B56FD;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent:             #111d35;
+    --sidebar-accent-foreground:  #1B56FD;
+    --sidebar-border:             #141e32;
+    --sidebar-ring:               #1B56FD;
+
+    /* DS palette aliases */
+    --ds-primary:            #1B56FD;
+    --ds-primary-container:  #1242d0;
+    --ds-secondary:          #06b6d4;
+    --ds-tertiary:           #41A67E;
+
+    /* Global radius */
+    --radius: 0.5rem;
+  }
+
+  /* ── Light mode — Apple Neutral ─────────────────────────────────────────── */
+  .light {
+    --background:           #F3F4F4;
+    --foreground:           #1c1c1e;
+
+    --card:                 #ffffff;
+    --card-foreground:      #1c1c1e;
+    --popover:              #ffffff;
+    --popover-foreground:   #1c1c1e;
+
+    --primary:              #1B56FD;
+    --primary-foreground:   #ffffff;
+    --brand:                #1B56FD;
+    --brand-foreground:     #ffffff;
+
+    --secondary:            #f2f2f7;
+    --secondary-foreground: #3a3a3c;
+    --muted:                #F3F4F4;
+    --muted-foreground:     #6e6e73;
+    --accent:               #e8f0fe;
+    --accent-foreground:    #1c1c1e;
+
+    --destructive:          #FF5B5B;
+    --gain:                 #6FCF97;
+    --gain-foreground:      #f0fdf4;
+    --loss:                 #FF5B5B;
+    --loss-foreground:      #fef2f2;
+
+    --tertiary:             #7F27FF;
+    --tertiary-foreground:  #ffffff;
+    --success:              #41A67E;
+    --success-foreground:   #ffffff;
+    --warning:              #FF6600;
+    --warning-foreground:   #ffffff;
+
+    --border:               #F5F2F2;
+    --input:                #F3F4F4;
+    --ring:                 #1B56FD;
+
+    --surface-low:          #ebebf0;
+    --surface:              #F3F4F4;
+    --surface-high:         #ffffff;
+    --surface-highest:      #ffffff;
+
+    --chart-1:              #1B56FD;
+    --chart-2:              #00FFDE;
+    --chart-3:              #3BC1A8;
+    --chart-4:              #7F27FF;
+    --chart-5:              #FF6600;
+    --chart-6:              #db2777;
+    --chart-7:              #C3110C;
+    --chart-8:              #FFD93D;
+
+    --sidebar:                    #EEEEEE;
+    --sidebar-foreground:         #1c1c1e;
+    --sidebar-primary:            #1B56FD;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent:             #e0e8fb;
+    --sidebar-accent-foreground:  #1B56FD;
+    --sidebar-border:             #d1d1d6;
+    --sidebar-ring:               #1B56FD;
+
+    --ds-primary:            #1B56FD;
+    --ds-primary-container:  #1242d0;
+    --ds-secondary:          #0891b2;
+    --ds-tertiary:           #41A67E;
+
+    --radius: 0.5rem;
+  }
+}

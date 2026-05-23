@@ -1,0 +1,9 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   @galata/design — Global styles barrel
+   Bu dosya design system'in kendi build'i (vite lib mode) içindir.
+   Consuming app buradan import ETMEZ — doğrudan token/base/components import eder.
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@import '../tokens/index.css';
+@import './base.css';
+@import './components.css';

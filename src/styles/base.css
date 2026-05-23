@@ -1,0 +1,55 @@
+/* ─────────────────────────────────────────────────────────────────────────────
+   @galata/design — Base layer styles
+   Bare module import yok (@tailwind yok). Consuming app PostCSS pipeline'ında
+   işlenir. Vendor import'lar (tw-animate-css, shadcn) uygulamanın kendi
+   index.css'inden gelir.
+   ───────────────────────────────────────────────────────────────────────────── */
+
+@layer base {
+  /* ── Font defaults ────────────────────────────────────────────────────── */
+  :root {
+    --font-sans:    'Nunito', 'Inter', sans-serif;
+    --font-display: 'Nunito', 'Inter', sans-serif;
+    --font-mono:    ui-monospace, 'Cascadia Code', monospace;
+  }
+
+  * {
+    border-color: var(--border);
+    outline-color: color-mix(in srgb, var(--ring) 50%, transparent);
+  }
+
+  html {
+    font-family: var(--font-sans);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: var(--foreground);
+    background-color: var(--background);
+    min-height: 100vh;
+    background-image: radial-gradient(
+      ellipse 70% 30% at 50% -2%,
+      color-mix(in srgb, var(--primary) 6%, transparent) 0%,
+      transparent 100%
+    );
+    background-attachment: fixed;
+  }
+}
+
+/* ── iOS Safe Area ────────────────────────────────────────────────────────── */
+.pt-safe     { padding-top:    env(safe-area-inset-top,    0px); }
+.pb-safe     { padding-bottom: env(safe-area-inset-bottom, 0px); }
+.pb-safe-nav { padding-bottom: calc(4rem + env(safe-area-inset-bottom, 0px)); }
+
+/* ── Keyframes ────────────────────────────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position:  200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes value-appear {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
