@@ -3,8 +3,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 // ── Styles (CSS) ─────────────────────────────────────────────────────────────
-// Consuming app'te import et: import '@galata/design/styles'
-// (vite build çıktısı: dist/styles/index.css)
+import './styles/global.css';
 
 // ── Utilities ────────────────────────────────────────────────────────────────
 export { cn }               from './lib/utils';
