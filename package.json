@@ -20,8 +20,8 @@
     "tailwind.config.ts"
   ],
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com",
-    "access": "restricted"
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   },
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly --declaration --outDir dist",
