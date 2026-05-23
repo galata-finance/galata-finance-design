@@ -1,5 +1,5 @@
 {
-  "name": "@galata/design",
+  "name": "@galata-finance/design",
   "version": "0.1.0",
   "description": "Galata Finance — shared design system: tokens, components, tailwind preset",
   "type": "module",
@@ -19,6 +19,10 @@
     "dist",
     "tailwind.config.ts"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
   "scripts": {
     "build": "vite build && tsc --emitDeclarationOnly --declaration --outDir dist",
     "dev": "vite build --watch",
