@@ -95,6 +95,12 @@ const config: Config = {
           high:    'var(--surface-high)',
           highest: 'var(--surface-highest)',
         },
+        /* Hover semantic tokens — use as hover:bg-hover-card etc. */
+        'hover-card':         'var(--hover-card)',
+        'hover-surface-high': 'var(--hover-surface-high)',
+        'hover-surface':      'var(--hover-surface)',
+        'hover-row':          'var(--hover-row)',
+        'hover-sidebar-item': 'var(--hover-sidebar-item)',
         ds: {
           primary:           'var(--ds-primary)',
           'primary-container': 'var(--ds-primary-container)',

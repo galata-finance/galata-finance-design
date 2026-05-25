@@ -146,6 +146,55 @@
     background-color: color-mix(in srgb, var(--sidebar-primary) 12%, transparent);
     color: var(--sidebar-primary);
   }
+
+  /* ── Hover system ─────────────────────────────────────────────────────── */
+
+  /*
+   * .card-interactive — opt-in modifier for clickable cards/surfaces.
+   * Apply alongside the surface class: class="analytics-card card-interactive"
+   * Never apply to non-interactive display-only cards.
+   */
+  .card-interactive {
+    cursor: pointer;
+    transition:
+      background-color var(--duration-fast) var(--ease-default),
+      box-shadow       var(--duration-fast) var(--ease-default);
+    outline: none;
+  }
+  .card-interactive:focus-visible {
+    box-shadow: 0 0 0 2px var(--ring);
+  }
+
+  /* Card shell (bg-card) — step up to hover-card */
+  .analytics-card.card-interactive:hover,
+  .surface-panel.card-interactive:hover,
+  .page-hero.card-interactive:hover {
+    background-color: var(--hover-card);
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Compact card / surface-high shell — step up to hover-surface-high */
+  .analytics-card-compact.card-interactive:hover,
+  .surface-shell.card-interactive:hover,
+  .toolbar-surface.card-interactive:hover,
+  .page-hero-muted.card-interactive:hover {
+    background-color: var(--hover-surface-high);
+  }
+
+  /*
+   * .nav-item — sidebar / nav list item.
+   * Apply to each nav link/button; .nav-active overrides when selected.
+   */
+  .nav-item {
+    cursor: pointer;
+    transition:
+      background-color var(--duration-fast) var(--ease-default),
+      color            var(--duration-fast) var(--ease-default);
+    border-radius: 0.75rem;
+  }
+  .nav-item:hover:not(.nav-active) {
+    background-color: var(--hover-sidebar-item);
+  }
 }
 
 @layer utilities {

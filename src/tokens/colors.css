@@ -82,6 +82,13 @@
     --ds-secondary:          #06b6d4;
     --ds-tertiary:           #41A67E;
 
+    /* Hover surface tokens — one step up in the surface hierarchy */
+    --hover-card:         color-mix(in srgb, var(--surface-high) 45%, var(--card));
+    --hover-surface-high: var(--surface-highest);
+    --hover-surface:      var(--surface-high);
+    --hover-row:          color-mix(in srgb, var(--primary) 8%, var(--surface-high));
+    --hover-sidebar-item: color-mix(in srgb, var(--sidebar-primary) 10%, var(--sidebar));
+
     /* Global radius */
     --radius: 0.5rem;
   }
@@ -152,6 +159,13 @@
     --ds-primary-container:  #1242d0;
     --ds-secondary:          #0891b2;
     --ds-tertiary:           #41A67E;
+
+    /* Hover surface tokens — step down toward muted (light surfaces are already bright) */
+    --hover-card:         color-mix(in srgb, var(--surface-low) 50%, var(--card));
+    --hover-surface-high: color-mix(in srgb, var(--surface-low) 60%, var(--surface-high));
+    --hover-surface:      var(--surface-low);
+    --hover-row:          color-mix(in srgb, var(--primary) 5%, var(--background));
+    --hover-sidebar-item: color-mix(in srgb, var(--sidebar-primary) 8%, var(--sidebar));
 
     --radius: 0.5rem;
   }
