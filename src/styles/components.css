@@ -198,6 +198,27 @@
 }
 
 @layer utilities {
+  /* ── Light mode: surface elevation ───────────────────────────────────── */
+  /*
+   * Dark mode'da surface hiyerarşisi renk kontrastıyla sağlanır.
+   * Light mode'da arka plan #F3F4F4 gri, surface #ffffff beyaz — gölge
+   * olmadan kart zemine karışır. Bu kurallar bg-surface ve analytics-card-compact
+   * kullanan tüm kart/panel elementlerine otomatik olarak shadow-sm ekler.
+   */
+  .light .bg-surface {
+    box-shadow: var(--shadow-sm);
+  }
+
+  /*
+   * analytics-card-compact dark mode'da bg-surface-high (#162030) kullanır —
+   * renk farkı yeterli. Light mode'da surface-high (#f5f5f7) ile background
+   * (#F3F4F4) rengi neredeyse aynı, kart görünmez. Beyaz yap + shadow ekle.
+   */
+  .light .analytics-card-compact {
+    background-color: var(--surface);
+    box-shadow: var(--shadow-sm);
+  }
+
   /* ── Typography helpers ───────────────────────────────────────────────── */
   .tabular-nums { font-variant-numeric: tabular-nums; }
   .positive     { color: var(--gain); }

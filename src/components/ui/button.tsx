@@ -29,6 +29,14 @@ const buttonVariants = cva(
         destructive:
           "border-transparent bg-destructive text-white hover:bg-[color-mix(in_srgb,var(--destructive)_88%,white_12%)]",
 
+        /* Success — gain/success color fill */
+        success:
+          "border-transparent bg-success text-success-foreground hover:bg-[color-mix(in_srgb,var(--success)_88%,white_12%)]",
+
+        /* Success Outline — bordered, fills on hover */
+        "success-outline":
+          "border-success text-success bg-transparent hover:bg-success hover:text-success-foreground",
+
         /* Link */
         link: "border-transparent text-brand underline-offset-4 hover:underline",
       },

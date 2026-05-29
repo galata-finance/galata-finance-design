@@ -128,13 +128,13 @@
     --warning:              #FF6600;
     --warning-foreground:   #ffffff;
 
-    --border:               #F5F2F2;
-    --input:                #F3F4F4;
+    --border:               #dcdcdc;
+    --input:                #ffffff;
     --ring:                 #1B56FD;
 
-    --surface-low:          #ebebf0;
-    --surface:              #F3F4F4;
-    --surface-high:         #ffffff;
+    --surface-low:          #e8eaed;
+    --surface:              #ffffff;   /* card arka planı — zemin (#F3F4F4) üzerinde yüksek yüzey */
+    --surface-high:         #f5f5f7;   /* kart içi hover / raised element */
     --surface-highest:      #ffffff;
 
     --chart-1:              #1B56FD;

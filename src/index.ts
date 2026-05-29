@@ -96,6 +96,8 @@ export {
 } from './components/ui/tabs';
 
 export { Toggle, toggleVariants } from './components/ui/toggle';
+export { Checkbox, CheckboxField } from './components/ui/checkbox';
+export type { CheckboxFieldProps }  from './components/ui/checkbox';
 
 export {
   Table,
