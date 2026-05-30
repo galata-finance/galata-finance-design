@@ -109,6 +109,8 @@ export {
   TableCell,
   TableCaption,
 } from './components/ui/table';
+export { BaseTable } from './components/ui/base-table';
+export type { BaseColumnDef, BaseTableProps } from './components/ui/base-table';
 
 // ── Composite components ──────────────────────────────────────────────────────
 export {
