@@ -136,7 +136,7 @@ export function BaseTable<TRow>({
                 ))}
               </TableRow>
             ))
-          ) : data.length === 0 ? (
+          ) : data.length === 0 && emptyNode !== undefined ? (
             <TableRow className="hover:bg-transparent">
               <TableCell
                 colSpan={visibleColumnCount}
@@ -145,7 +145,7 @@ export function BaseTable<TRow>({
                 {emptyNode}
               </TableCell>
             </TableRow>
-          ) : (
+          ) : data.length === 0 ? null : (
             data.map((row) => {
               const rowProps = getRowProps?.(row);
               const accentColor = rowAccentColor?.(row);
