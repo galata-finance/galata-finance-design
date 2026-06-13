@@ -42,7 +42,7 @@
   }
 
   .analytics-table-shell {
-    @apply overflow-hidden rounded-2xl bg-card;
+    @apply overflow-hidden bg-card;
     box-shadow: var(--shadow-sm);
   }
 
