@@ -88,7 +88,7 @@ function MetricCard({
           )}
         </div>
         {icon && (
-          <div className={cn('flex size-8 shrink-0 items-center justify-center rounded-xl', toneIconBg[tone])}>
+          <div className={cn('flex size-8 shrink-0 items-center justify-center rounded-lg', toneIconBg[tone])}>
             {icon}
           </div>
         )}

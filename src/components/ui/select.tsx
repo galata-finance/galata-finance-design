@@ -40,7 +40,7 @@ function SelectTrigger({
       data-size={size}
       className={cn(
         "group/select flex w-full items-center justify-between gap-2",
-        "rounded-xl border border-border bg-input px-3.5 py-2 text-sm whitespace-nowrap",
+        "rounded-lg border border-border bg-input px-3.5 py-2 text-sm whitespace-nowrap",
         "transition-colors duration-fast outline-none select-none",
         "hover:border-border/80",
         "focus-visible:border-brand focus-visible:ring-2 focus-visible:ring-brand/20",
@@ -96,7 +96,7 @@ function SelectContent({
           className={cn(
             "relative isolate z-50 max-h-(--available-height) min-w-56",
             "origin-(--transform-origin) overflow-x-hidden overflow-y-auto",
-            "rounded-xl border border-border bg-popover p-1.5 text-popover-foreground",
+            "rounded-lg border border-border bg-popover p-1.5 text-popover-foreground",
             "shadow-lg",
             "[width:max(var(--anchor-width),18rem)] [max-width:min(24rem,calc(100vw-2rem))]",
             "data-[align-trigger=true]:animate-none",

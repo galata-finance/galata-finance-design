@@ -33,7 +33,7 @@ function ChartTooltip({
   return (
     <div
       className={cn(
-        'min-w-[120px] rounded-xl bg-card px-3 py-2.5',
+        'min-w-[120px] rounded-lg bg-card px-3 py-2.5',
         'shadow-lg',
         className
       )}

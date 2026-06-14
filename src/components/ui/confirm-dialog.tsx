@@ -41,7 +41,7 @@ export function ConfirmDialog({
         </>
       }
     >
-      <div className="flex gap-3 rounded-xl border border-destructive/20 bg-destructive/5 p-4">
+      <div className="flex gap-3 rounded-lg border border-destructive/20 bg-destructive/5 p-4">
         <AlertTriangleIcon className="mt-0.5 h-5 w-5 shrink-0 text-destructive" />
         <p className="text-sm text-foreground/80">{description}</p>
       </div>

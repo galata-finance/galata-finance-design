@@ -19,7 +19,7 @@ export function SegmentControl<T extends string>({
   className,
 }: SegmentControlProps<T>) {
   return (
-    <div className={cn('flex items-center gap-0.5 rounded-xl bg-surface-high p-1 w-fit', className)}>
+    <div className={cn('flex items-center gap-0.5 rounded-lg bg-surface-high p-1 w-fit', className)}>
       {options.map((opt) => (
         <button
           key={opt.value}

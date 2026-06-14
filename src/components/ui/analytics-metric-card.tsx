@@ -12,6 +12,7 @@ export function AnalyticsMetricCard({
   footer,
   className,
   valueClassName,
+  variant = 'card',
 }: {
   title: string;
   value: string;
@@ -21,11 +22,13 @@ export function AnalyticsMetricCard({
   footer?: React.ReactNode;
   className?: string;
   valueClassName?: string;
+  /** 'card' = classic card shell, 'flat' = no bg/shadow/border-radius */
+  variant?: 'card' | 'flat';
 }) {
   return (
     <div
       className={cn(
-        'analytics-card-compact px-5 py-5',
+        variant === 'flat' ? 'flat-metric flex-col items-start gap-3' : 'analytics-card-compact px-5 py-5',
         className,
       )}
     >
@@ -51,7 +54,7 @@ export function AnalyticsMetricCard({
         {Icon ? (
           <div
             className={cn(
-              'flex h-8 w-8 shrink-0 items-center justify-center rounded-xl',
+              'flex h-8 w-8 shrink-0 items-center justify-center rounded-lg',
               tone === 'warning' && 'bg-amber-500/12 text-amber-400',
               tone === 'positive' && 'bg-emerald-500/12 text-emerald-400',
               tone === 'loss' && 'bg-orange-500/12 text-orange-400',

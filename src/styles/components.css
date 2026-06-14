@@ -23,36 +23,33 @@
 
   /* ── Surface shells ───────────────────────────────────────────────────── */
   .surface-shell {
-    @apply rounded-2xl bg-surface-high px-5 py-5;
+    @apply rounded-lg bg-surface-high px-5 py-5;
   }
 
   .surface-panel {
-    @apply rounded-2xl bg-surface;
-    box-shadow: var(--shadow-sm);
+    @apply rounded-lg bg-surface;
   }
 
   /* ── Analytics card ───────────────────────────────────────────────────── */
   .analytics-card {
-    @apply rounded-2xl bg-card;
-    box-shadow: var(--shadow-sm);
+    @apply rounded-lg bg-card;
   }
 
   .analytics-card-compact {
-    @apply rounded-2xl bg-surface-high;
+    @apply rounded-lg bg-surface-high;
   }
 
   .analytics-table-shell {
     @apply overflow-hidden bg-card;
-    box-shadow: var(--shadow-sm);
   }
 
   .toolbar-surface {
-    @apply rounded-2xl bg-surface-high px-4 py-3;
+    @apply rounded-lg bg-surface-high px-4 py-3;
   }
 
   /* ── Toggle / Segmented option button ────────────────────────────────── */
   .toggle-option {
-    @apply flex-1 rounded-xl border py-2 text-sm font-semibold transition-colors duration-fast;
+    @apply flex-1 rounded-lg border py-2 text-sm font-semibold transition-colors duration-fast;
     @apply bg-muted border-border text-muted-foreground;
     @apply hover:text-foreground;
   }
@@ -107,7 +104,7 @@
   }
 
   .auth-card {
-    @apply w-full max-w-sm rounded-2xl bg-card px-6 py-7;
+    @apply w-full max-w-sm rounded-lg bg-card px-6 py-7;
     box-shadow: var(--shadow-xl);
   }
 
@@ -120,12 +117,80 @@
   .page-shell { @apply space-y-6; }
 
   .page-hero {
-    @apply rounded-2xl bg-card px-5 py-4;
+    @apply rounded-lg bg-card px-5 py-4;
     box-shadow: var(--shadow-sm);
   }
 
   .page-hero-muted {
-    @apply rounded-2xl bg-surface-high px-5 py-5;
+    @apply rounded-lg bg-surface-high px-5 py-5;
+  }
+
+  /* ── Flat design system ─────────────────────────────────────────────── */
+  /*
+   * Card-free layout primitives. Content separated by dividers + spacing.
+   * Typography, color contrast, and whitespace drive visual hierarchy
+   * instead of elevation/shadow.
+   */
+
+  /** Thin horizontal divider — replaces card boundaries */
+  .flat-divider {
+    height: 1px;
+    background-color: color-mix(in srgb, var(--border) 30%, transparent);
+  }
+
+  /** Section label — uppercase eyebrow above each flat section */
+  .flat-section-label {
+    @apply text-muted-foreground;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-bottom: 0.75rem;
+  }
+
+  /** Flat section — replaces analytics-card; no bg, no shadow, no border-radius */
+  .flat-section {
+    @apply py-6;
+  }
+
+  /** Flat page hero — replaces page-hero; transparent bg, no card shell */
+  .flat-hero {
+    @apply pb-6;
+  }
+
+  /** Flat page shell — tighter section spacing than card-based layout */
+  .flat-page-shell {
+    /* sections are separated by .flat-divider, not space-y */
+  }
+
+  /** Flat metric row — icon + label/sub on left, value on right */
+  .flat-metric {
+    @apply flex items-center justify-between;
+    padding: 0.875rem 0; /* py-3.5 */
+  }
+
+  /** Flat icon container — lighter than card-based icon bg */
+  .flat-icon {
+    @apply flex items-center justify-center rounded-lg shrink-0;
+    width: 2rem;
+    height: 2rem;
+    background-color: color-mix(in srgb, var(--surface-high) 60%, transparent);
+  }
+
+  /** Flat row — list item with subtle hover (replaces card row hover) */
+  .flat-row {
+    @apply flex items-center gap-4 py-3 rounded-lg transition-colors;
+    margin-inline: -0.25rem;
+    padding-inline: 0.25rem;
+  }
+  .flat-row:hover {
+    background-color: color-mix(in srgb, var(--surface-high) 40%, transparent);
+  }
+
+  /** Flat toolbar — replaces toolbar-surface; transparent bg, bottom border only */
+  .flat-toolbar {
+    @apply py-0;
+    border-bottom: 1px solid color-mix(in srgb, var(--border) 20%, transparent);
   }
 
   /* ── Glassmorphism ────────────────────────────────────────────────────── */

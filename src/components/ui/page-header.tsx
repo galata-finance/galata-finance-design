@@ -16,7 +16,7 @@ function PageHeader({ title, subtitle, action, className, ...props }: PageHeader
     <div
       data-slot="page-header"
       className={cn(
-        'bg-header-ambient flex flex-wrap items-center justify-between gap-4 rounded-[28px] px-6 py-5',
+        'bg-header-ambient flex flex-wrap items-center justify-between gap-4 rounded-lg px-6 py-5',
         className
       )}
       {...props}
