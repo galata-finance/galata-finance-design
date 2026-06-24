@@ -1,13 +1,13 @@
 /* ─────────────────────────────────────────────────────────────────────────────
    @galata/design — Color Tokens
-   Dark mode (Obsidian Architect) default, light mode (Apple Neutral) override.
+   Dark mode (Obsidian) default, light mode (Apple Neutral) override.
    ───────────────────────────────────────────────────────────────────────────── */
 
 @layer base {
-  /* ── Dark mode — Deep Indigo-Black ──────────────────────────────────────── */
+  /* ── Dark mode — Obsidian ─────────────────────────────────────────────── */
   :root,
   .dark {
-    --background:           #08090f;
+    --background:           #080a12;
     --foreground:           #e8ebf4;
 
     /* Card / Popover */
@@ -17,72 +17,82 @@
     --popover-foreground:   #e8ebf4;
 
     /* Brand scale */
-    --primary:              #1B56FD;
+    --primary:              #4f83f6;
     --primary-foreground:   #ffffff;
-    --brand:                #1B56FD;
+    --brand:                #4f83f6;
     --brand-foreground:     #ffffff;
 
     /* Semantic surfaces */
-    --secondary:            #161e30;
-    --secondary-foreground: #F5F5F5;
+    --secondary:            #161c2e;
+    --secondary-foreground: #e8ebf4;
     --muted:                #0f1320;
-    --muted-foreground:     #5d6b86;
-    --accent:               #1a2845;
+    --muted-foreground:     #6b7693;
+    --accent:               #1d2640;
     --accent-foreground:    #e8ebf4;
 
     /* State colors */
-    --destructive:          #FF5B5B;
-    --gain:                 #6FCF97;
+    --destructive:          #f43f5e;
+    --gain:                 #22c55e;
     --gain-foreground:      #001a0d;
-    --loss:                 #FF5B5B;
+    --loss:                 #f43f5e;
     --loss-foreground:      #1a0008;
 
     /* Extended semantic */
-    --tertiary:             #7F27FF;
+    --tertiary:             #6366f1;
     --tertiary-foreground:  #ffffff;
-    --success:              #41A67E;
+    --success:              #22c55e;
     --success-foreground:   #ffffff;
-    --warning:              #FF6600;
+    --warning:              #f59e0b;
     --warning-foreground:   #ffffff;
 
     /* Borders & inputs */
-    --border:               #1a2035;
-    --input:                #0d1120;
-    --ring:                 #1B56FD;
+    --border:               #1e2740;
+    --input:                #0f1320;
+    --ring:                 #4f83f6;
 
-    /* Surface hierarchy (low → highest) */
-    --surface-low:          #08090f;
+    /* Surface hierarchy (low -> highest) */
+    --surface-low:          #080a12;
     --surface:              #0f1320;
-    --surface-high:         #162030;
-    --surface-highest:      #1e2d45;
+    --surface-high:         #161c2e;
+    --surface-highest:      #1d2640;
+
+    /* Dashboard layout tokens */
+    --band:                 #11141f;
+    --panel:                #0f1320;
+    --panel2:               #161c2e;
+    --panel3:               #1d2640;
+    --fg:                   #e8ebf4;
+    --fg2:                  #aab4cf;
+    --mut:                  #6b7693;
+    --sbborder:             #141e32;
 
     /* Chart palette */
-    --chart-1:              #1B56FD;   /* primary blue     */
-    --chart-2:              #00FFDE;   /* cyan             */
-    --chart-3:              #3BC1A8;   /* green            */
-    --chart-4:              #7F27FF;   /* violet           */
-    --chart-5:              #FF6600;   /* amber/warning    */
-    --chart-6:              #ec4899;   /* pink             */
-    --chart-7:              #C3110C;   /* red / loss       */
-    --chart-8:              #FFD93D;   /* yellow           */
+    --chart-1:              #6366f1;   /* indigo          */
+    --chart-2:              #06b6d4;   /* cyan            */
+    --chart-3:              #22c55e;   /* green           */
+    --chart-4:              #a78bfa;   /* violet          */
+    --chart-5:              #f59e0b;   /* amber           */
+    --chart-6:              #ec4899;   /* pink            */
+    --chart-7:              #f43f5e;   /* red / loss      */
+    --chart-8:              #3b82f6;   /* blue            */
 
     /* Sidebar */
     --sidebar:                    #080c18;
     --sidebar-foreground:         #e8ebf4;
-    --sidebar-primary:            #1B56FD;
+    --sidebar-primary:            #4f83f6;
     --sidebar-primary-foreground: #ffffff;
-    --sidebar-accent:             #111d35;
-    --sidebar-accent-foreground:  #1B56FD;
+    --sidebar-accent:             #161c2e;
+    --sidebar-accent-foreground:  #4f83f6;
     --sidebar-border:             #141e32;
-    --sidebar-ring:               #1B56FD;
+    --sidebar-ring:               #4f83f6;
 
     /* DS palette aliases */
-    --ds-primary:            #1B56FD;
-    --ds-primary-container:  #1242d0;
+    --ds-primary:            #4f83f6;
+    --ds-primary-container:  #6366f1;
     --ds-secondary:          #06b6d4;
-    --ds-tertiary:           #41A67E;
+    --ds-tertiary:           #22c55e;
 
-    /* Hover surface tokens — one step up in the surface hierarchy */
+    /* Hover surface tokens */
     --hover-card:         color-mix(in srgb, var(--surface-high) 45%, var(--card));
     --hover-surface-high: var(--surface-highest);
     --hover-surface:      var(--surface-high);
@@ -91,76 +101,90 @@
 
     /* Global radius */
     --radius: 0.5rem;
+
+    /* Dashboard shadow */
+    --shadow-card: 0 1px 3px rgba(0,0,0,.4), 0 16px 40px -28px rgba(0,0,0,.9);
   }
 
-  /* ── Light mode — Apple Neutral ─────────────────────────────────────────── */
+  /* ── Light mode — Apple Neutral ───────────────────────────────────────── */
   .light {
-    --background:           #F3F4F4;
-    --foreground:           #1c1c1e;
+    --background:           #e9ebf2;
+    --foreground:           #161a27;
 
     --card:                 #ffffff;
-    --card-foreground:      #1c1c1e;
+    --card-foreground:      #161a27;
     --popover:              #ffffff;
-    --popover-foreground:   #1c1c1e;
+    --popover-foreground:   #161a27;
 
-    --primary:              #1B56FD;
+    --primary:              #2563eb;
     --primary-foreground:   #ffffff;
-    --brand:                #1B56FD;
+    --brand:                #2563eb;
     --brand-foreground:     #ffffff;
 
-    --secondary:            #f2f2f7;
-    --secondary-foreground: #3a3a3c;
-    --muted:                #F3F4F4;
-    --muted-foreground:     #6e6e73;
-    --accent:               #e8f0fe;
-    --accent-foreground:    #1c1c1e;
+    --secondary:            #f3f5fa;
+    --secondary-foreground: #454c60;
+    --muted:                #f3f5fa;
+    --muted-foreground:     #838b9f;
+    --accent:               #e9ecf4;
+    --accent-foreground:    #161a27;
 
-    --destructive:          #FF5B5B;
-    --gain:                 #6FCF97;
+    --destructive:          #e11d48;
+    --gain:                 #16a34a;
     --gain-foreground:      #f0fdf4;
-    --loss:                 #FF5B5B;
+    --loss:                 #e11d48;
     --loss-foreground:      #fef2f2;
 
-    --tertiary:             #7F27FF;
+    --tertiary:             #6366f1;
     --tertiary-foreground:  #ffffff;
-    --success:              #41A67E;
+    --success:              #16a34a;
     --success-foreground:   #ffffff;
-    --warning:              #FF6600;
+    --warning:              #f59e0b;
     --warning-foreground:   #ffffff;
 
-    --border:               #dcdcdc;
+    --border:               #e6e9f1;
     --input:                #ffffff;
-    --ring:                 #1B56FD;
+    --ring:                 #2563eb;
 
-    --surface-low:          #e8eaed;
-    --surface:              #ffffff;   /* card arka planı — zemin (#F3F4F4) üzerinde yüksek yüzey */
-    --surface-high:         #f5f5f7;   /* kart içi hover / raised element */
-    --surface-highest:      #ffffff;
+    --surface-low:          #e9ebf2;
+    --surface:              #ffffff;
+    --surface-high:         #f3f5fa;
+    --surface-highest:      #e9ecf4;
 
-    --chart-1:              #1B56FD;
-    --chart-2:              #00FFDE;
-    --chart-3:              #3BC1A8;
-    --chart-4:              #7F27FF;
-    --chart-5:              #FF6600;
+    /* Dashboard layout tokens */
+    --band:                 #F5F5F0;
+    --panel:                #ffffff;
+    --panel2:               #f3f5fa;
+    --panel3:               #e9ecf4;
+    --fg:                   #161a27;
+    --fg2:                  #454c60;
+    --mut:                  #838b9f;
+    --sbborder:             #ebedf3;
+
+    /* Chart palette */
+    --chart-1:              #6366f1;
+    --chart-2:              #06b6d4;
+    --chart-3:              #16a34a;
+    --chart-4:              #a78bfa;
+    --chart-5:              #f59e0b;
     --chart-6:              #db2777;
-    --chart-7:              #C3110C;
-    --chart-8:              #FFD93D;
+    --chart-7:              #e11d48;
+    --chart-8:              #2563eb;
 
-    --sidebar:                    #EEEEEE;
-    --sidebar-foreground:         #1c1c1e;
-    --sidebar-primary:            #1B56FD;
+    --sidebar:                    #ffffff;
+    --sidebar-foreground:         #161a27;
+    --sidebar-primary:            #2563eb;
     --sidebar-primary-foreground: #ffffff;
-    --sidebar-accent:             #e0e8fb;
-    --sidebar-accent-foreground:  #1B56FD;
-    --sidebar-border:             #d1d1d6;
-    --sidebar-ring:               #1B56FD;
+    --sidebar-accent:             #f3f5fa;
+    --sidebar-accent-foreground:  #2563eb;
+    --sidebar-border:             #ebedf3;
+    --sidebar-ring:               #2563eb;
 
-    --ds-primary:            #1B56FD;
-    --ds-primary-container:  #1242d0;
+    --ds-primary:            #2563eb;
+    --ds-primary-container:  #6366f1;
     --ds-secondary:          #0891b2;
-    --ds-tertiary:           #41A67E;
+    --ds-tertiary:           #16a34a;
 
-    /* Hover surface tokens — step down toward muted (light surfaces are already bright) */
+    /* Hover surface tokens */
     --hover-card:         color-mix(in srgb, var(--surface-low) 50%, var(--card));
     --hover-surface-high: color-mix(in srgb, var(--surface-low) 60%, var(--surface-high));
     --hover-surface:      var(--surface-low);
@@ -168,5 +192,8 @@
     --hover-sidebar-item: color-mix(in srgb, var(--sidebar-primary) 8%, var(--sidebar));
 
     --radius: 0.5rem;
+
+    /* Dashboard shadow */
+    --shadow-card: 0 1px 2px rgba(20,30,60,.05), 0 12px 30px -18px rgba(20,30,60,.18);
   }
 }

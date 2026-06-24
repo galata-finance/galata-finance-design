@@ -34,9 +34,12 @@
     --font-semibold: 600;
     --font-bold:     700;
 
+    /* ── Font Weights (extended) ────────────────────────────────────────── */
+    --font-extrabold: 800;
+
     /* ── Font Families ────────────────────────────────────────────────────── */
-    --font-sans:    'Nunito', 'Inter', sans-serif;
-    --font-display: 'Nunito', 'Inter', sans-serif;
+    --font-sans:    'Plus Jakarta Sans', 'Inter', sans-serif;
+    --font-display: 'Plus Jakarta Sans', 'Inter', sans-serif;
     --font-brand:   'Syne', sans-serif;
   }
 }

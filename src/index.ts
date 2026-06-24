@@ -10,7 +10,7 @@
 
 // ── Utilities ────────────────────────────────────────────────────────────────
 export { cn }               from './lib/utils';
-export { CHART_COLORS }     from './lib/ds-colors';
+export { CHART_COLORS, CHART_COLOR_OTHER, PORTFOLIO_COLORS, MARKET_DOT_COLORS } from './lib/ds-colors';
 export type { ChartColor }  from './lib/ds-colors';
 
 // ── Primitive components ──────────────────────────────────────────────────────

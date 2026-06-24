@@ -1,7 +1,7 @@
 /**
  * @galata/design — Shared Tailwind preset
  *
- * Consuming app'te kullanım:
+ * Consuming app'te kullanim:
  *   import galataPreset from '@galata/design/tailwind';
  *   export default { presets: [galataPreset], content: [...] }
  */
@@ -95,7 +95,20 @@ const config: Config = {
           high:    'var(--surface-high)',
           highest: 'var(--surface-highest)',
         },
-        /* Hover semantic tokens — use as hover:bg-hover-card etc. */
+        /* Dashboard layout tokens */
+        band:   'var(--band)',
+        panel: {
+          DEFAULT: 'var(--panel)',
+          '2':     'var(--panel2)',
+          '3':     'var(--panel3)',
+        },
+        fg: {
+          DEFAULT: 'var(--fg)',
+          '2':     'var(--fg2)',
+        },
+        mut:      'var(--mut)',
+        sbborder: 'var(--sbborder)',
+        /* Hover semantic tokens */
         'hover-card':         'var(--hover-card)',
         'hover-surface-high': 'var(--hover-surface-high)',
         'hover-surface':      'var(--hover-surface)',
@@ -109,6 +122,7 @@ const config: Config = {
         },
       },
       borderRadius: {
+        '3xl': '1.625rem',
         '2xl': '1.5rem',
         xl:    '1rem',
         lg:    '0.75rem',
@@ -116,9 +130,12 @@ const config: Config = {
         sm:    '0.375rem',
       },
       fontFamily: {
-        sans:    ['Nunito', 'Inter', 'sans-serif'],
-        display: ['Nunito', 'Inter', 'sans-serif'],
+        sans:    ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+        display: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
         brand:   ['Syne', 'sans-serif'],
+      },
+      fontWeight: {
+        extrabold: '800',
       },
       boxShadow: {
         sm:        'var(--shadow-sm)',
@@ -128,6 +145,7 @@ const config: Config = {
         xl:        'var(--shadow-xl)',
         glow:      'var(--shadow-glow)',
         'glow-sm': 'var(--shadow-glow-sm)',
+        card:      'var(--shadow-card)',
       },
       transitionDuration: {
         instant: 'var(--duration-instant)',

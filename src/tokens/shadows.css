@@ -6,9 +6,8 @@
 @layer base {
   :root,
   .dark {
-    /* Subtle layered shadows on near-black background */
-    --shadow-sm:      0 1px 3px rgba(0, 0, 0, 0.30);
-    --shadow-md:      0 4px 8px rgba(0, 0, 0, 0.35), 0 2px 4px rgba(0, 0, 0, 0.20);
+    --shadow-sm:      0 1px 3px rgba(0, 0, 0, 0.40);
+    --shadow-md:      0 1px 3px rgba(0,0,0,.4), 0 16px 40px -28px rgba(0,0,0,.9);
     --shadow-lg:      0 10px 24px rgba(0, 0, 0, 0.40), 0 4px 8px rgba(0, 0, 0, 0.20);
     --shadow-xl:      0 20px 48px rgba(0, 0, 0, 0.50), 0 8px 16px rgba(0, 0, 0, 0.25);
     --shadow-glow:    0 0 24px color-mix(in srgb, var(--brand) 30%, transparent);
@@ -16,11 +15,10 @@
   }
 
   .light {
-    /* Neutral, crisp shadows on light grey background */
-    --shadow-sm:      0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
-    --shadow-md:      0 4px 8px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.05);
-    --shadow-lg:      0 10px 24px rgba(0, 0, 0, 0.10), 0 4px 8px rgba(0, 0, 0, 0.05);
-    --shadow-xl:      0 20px 48px rgba(0, 0, 0, 0.12), 0 8px 16px rgba(0, 0, 0, 0.06);
+    --shadow-sm:      0 1px 2px rgba(20,30,60,.05), 0 1px 3px rgba(20,30,60,.04);
+    --shadow-md:      0 1px 2px rgba(20,30,60,.05), 0 12px 30px -18px rgba(20,30,60,.18);
+    --shadow-lg:      0 10px 24px rgba(20,30,60,.10), 0 4px 8px rgba(20,30,60,.05);
+    --shadow-xl:      0 20px 48px rgba(20,30,60,.12), 0 8px 16px rgba(20,30,60,.06);
     --shadow-glow:    0 0 20px color-mix(in srgb, var(--brand) 18%, transparent);
     --shadow-glow-sm: 0 0 8px  color-mix(in srgb, var(--brand) 12%, transparent);
   }
