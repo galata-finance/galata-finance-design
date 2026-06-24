@@ -1,6 +1,6 @@
 {
   "name": "@galata-finance/design",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Galata Finance — shared design system: tokens, components, tailwind preset",
   "type": "module",
   "exports": {
