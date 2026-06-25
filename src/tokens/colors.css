@@ -7,7 +7,7 @@
   /* ── Dark mode — Obsidian ─────────────────────────────────────────────── */
   :root,
   .dark {
-    --background:           #080a12;
+    --background:           #161C31;
     --background-alt:       #0a0d16;
     --foreground:           #e8ebf4;
 
@@ -109,8 +109,8 @@
 
   /* ── Light mode — Apple Neutral ───────────────────────────────────────── */
   .light {
-    --background:           #F5F3EE;
-    --background-alt:       #EAECF0;
+    --background:           #F4F6F7;
+    --background-alt:       #ffffff;
     --foreground:           #161a27;
 
     --card:                 #ffffff;
