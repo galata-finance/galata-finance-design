@@ -17,6 +17,10 @@ const buttonVariants = cva(
         outline:
           "border-border bg-transparent text-foreground hover:bg-surface-high",
 
+        /* Panel — bordered, filled card surface */
+        panel:
+          "border-border bg-card text-foreground hover:bg-surface-high",
+
         /* Secondary — muted surface */
         secondary:
           "border-transparent bg-secondary text-secondary-foreground hover:bg-surface-highest",

@@ -2,19 +2,32 @@ import * as React from "react"
 
 import { cn } from '../../lib/utils'
 
+type CardSize = 'default' | 'sm' | 'md' | 'lg';
+
+/**
+ * Card — Unified surface component.
+ *
+ * Sizes control border-radius (padding is left to the consumer or sub-components):
+ *   default  — rounded-lg (8px)   — Notes, legacy structured cards
+ *   sm       — rounded-[18px]     — LiveMarketStrip, MetricCard strip
+ *   md       — rounded-[20px]     — Summary strip, SubsCardGrid
+ *   lg       — rounded-3xl (24px) — Hero charts, full-width panels
+ */
 function Card({
   className,
   size = "default",
   ...props
-}: React.ComponentProps<"div"> & { size?: "default" | "sm" }) {
+}: React.ComponentProps<"div"> & { size?: CardSize }) {
   return (
     <div
       data-slot="card"
       data-size={size}
       className={cn(
-        "analytics-card group/card flex flex-col gap-4 overflow-hidden py-4 text-sm text-card-foreground",
-        "has-data-[slot=card-footer]:pb-0 has-[>img:first-child]:pt-0",
-        "data-[size=sm]:gap-3 data-[size=sm]:py-3",
+        "group/card flex flex-col overflow-hidden border border-border bg-card shadow-card text-card-foreground",
+        size === 'default' && 'rounded-lg',
+        size === 'sm'      && 'rounded-[18px]',
+        size === 'md'      && 'rounded-[20px]',
+        size === 'lg'      && 'rounded-3xl',
         className
       )}
       {...props}
@@ -106,3 +119,4 @@ export {
   CardDescription,
   CardContent,
 }
+export type { CardSize }

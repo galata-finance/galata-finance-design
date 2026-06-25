@@ -8,6 +8,7 @@
   :root,
   .dark {
     --background:           #080a12;
+    --background-alt:       #0a0d16;
     --foreground:           #e8ebf4;
 
     /* Card / Popover */
@@ -108,7 +109,8 @@
 
   /* ── Light mode — Apple Neutral ───────────────────────────────────────── */
   .light {
-    --background:           #e9ebf2;
+    --background:           #F5F3EE;
+    --background-alt:       #EAECF0;
     --foreground:           #161a27;
 
     --card:                 #ffffff;
@@ -121,11 +123,11 @@
     --brand:                #2563eb;
     --brand-foreground:     #ffffff;
 
-    --secondary:            #f3f5fa;
+    --secondary:            #f5f7fb;
     --secondary-foreground: #454c60;
-    --muted:                #f3f5fa;
+    --muted:                #f5f7fb;
     --muted-foreground:     #838b9f;
-    --accent:               #e9ecf4;
+    --accent:               #eef0f6;
     --accent-foreground:    #161a27;
 
     --destructive:          #e11d48;
@@ -145,16 +147,16 @@
     --input:                #ffffff;
     --ring:                 #2563eb;
 
-    --surface-low:          #e9ebf2;
+    --surface-low:          #eef0f5;
     --surface:              #ffffff;
-    --surface-high:         #f3f5fa;
-    --surface-highest:      #e9ecf4;
+    --surface-high:         #f5f7fb;
+    --surface-highest:      #eef0f6;
 
     /* Dashboard layout tokens */
-    --band:                 #F5F5F0;
+    --band:                 #f7f7f5;
     --panel:                #ffffff;
-    --panel2:               #f3f5fa;
-    --panel3:               #e9ecf4;
+    --panel2:               #f5f7fb;
+    --panel3:               #eef0f6;
     --fg:                   #161a27;
     --fg2:                  #454c60;
     --mut:                  #838b9f;
@@ -174,7 +176,7 @@
     --sidebar-foreground:         #161a27;
     --sidebar-primary:            #2563eb;
     --sidebar-primary-foreground: #ffffff;
-    --sidebar-accent:             #f3f5fa;
+    --sidebar-accent:             #f5f7fb;
     --sidebar-accent-foreground:  #2563eb;
     --sidebar-border:             #ebedf3;
     --sidebar-ring:               #2563eb;

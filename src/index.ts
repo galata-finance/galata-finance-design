@@ -25,6 +25,7 @@ export {
   CardDescription,
   CardContent,
 } from './components/ui/card';
+export type { CardSize } from './components/ui/card';
 
 export {
   Dialog,

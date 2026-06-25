@@ -6,19 +6,17 @@
 @layer components {
   /* ── Button gradient ──────────────────────────────────────────────────── */
   .btn-gradient {
-    background: linear-gradient(
-      135deg,
-      var(--primary) 0%,
-      color-mix(in srgb, var(--primary) 80%, var(--ds-secondary) 20%) 100%
-    );
+    background: linear-gradient(135deg, var(--primary) 0%, var(--tertiary) 100%);
     color: var(--primary-foreground);
+    box-shadow: 0 8px 20px -8px color-mix(in srgb, var(--primary) 55%, transparent);
   }
   .btn-gradient:hover {
     background: linear-gradient(
       135deg,
       color-mix(in srgb, var(--primary) 90%, white 10%) 0%,
-      color-mix(in srgb, var(--primary) 72%, var(--ds-secondary) 20%) 100%
+      var(--tertiary) 100%
     );
+    box-shadow: 0 8px 24px -6px color-mix(in srgb, var(--primary) 65%, transparent);
   }
 
   /* ── Surface shells ───────────────────────────────────────────────────── */
