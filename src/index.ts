@@ -15,6 +15,10 @@ export type { ChartColor }  from './lib/ds-colors';
 
 // ── Primitive components ──────────────────────────────────────────────────────
 export { Badge, badgeVariants }   from './components/ui/badge';
+export { PriceMeta }              from './components/ui/price-meta';
+export type { PriceMetaProps }    from './components/ui/price-meta';
+export { RangeBar, rangeBarTrackVariants } from './components/ui/range-bar';
+export type { RangeBarProps }     from './components/ui/range-bar';
 export { Button, buttonVariants } from './components/ui/button';
 export {
   Card,
