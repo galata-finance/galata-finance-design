@@ -103,6 +103,8 @@ export {
 export { Toggle, toggleVariants } from './components/ui/toggle';
 export { Checkbox, CheckboxField } from './components/ui/checkbox';
 export type { CheckboxFieldProps }  from './components/ui/checkbox';
+export { Switch, SwitchField }      from './components/ui/switch';
+export type { SwitchFieldProps }    from './components/ui/switch';
 
 export {
   Table,
