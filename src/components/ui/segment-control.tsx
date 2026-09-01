@@ -11,6 +11,14 @@ interface SegmentControlProps<T extends string> {
   value: T;
   onChange: (value: T) => void;
   className?: string;
+  /**
+   * Seçim sunucuya yazılırken kilitlenir.
+   *
+   * Kaydetme sırasında tıklamaya açık bırakmak, kullanıcının ikinci bir
+   * seçim yapıp iki isteği yarıştırmasına ve arayüzün kaybedene göre
+   * yerleşmesine yol açıyor.
+   */
+  disabled?: boolean;
 }
 
 export function SegmentControl<T extends string>({
@@ -18,14 +26,22 @@ export function SegmentControl<T extends string>({
   value,
   onChange,
   className,
+  disabled,
 }: SegmentControlProps<T>) {
   return (
-    <div className={cn('flex items-center gap-0.5 rounded-lg bg-surface-high p-1 w-fit', className)}>
+    <div
+      className={cn(
+        'flex items-center gap-0.5 rounded-lg bg-surface-high p-1 w-fit',
+        disabled && 'pointer-events-none opacity-60',
+        className,
+      )}
+    >
       {options.map((opt) => (
         <Button
           key={opt.value}
           variant="ghost"
           size="xs"
+          disabled={disabled}
           onClick={() => onChange(opt.value)}
           className={cn(
             'rounded-lg px-4 py-1.5 text-xs font-semibold',
