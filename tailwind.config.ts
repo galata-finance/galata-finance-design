@@ -7,118 +7,135 @@
  */
 import type { Config } from 'tailwindcss';
 
+/**
+ * Renk token'ini ALFA MODİFİKATÖRÜNE açık hâle getirir.
+ *
+ * Token'lar `#4f83f6` gibi HEX tutuyor. Tailwind bir opaklık modifikatörü
+ * gördüğünde (`bg-brand/60`) değeri `rgb(var(--brand) / 0.6)` diye yeniden
+ * yazıyor; `--brand` kanal üçlüsü olmadığı için bu GEÇERSİZ bir renk
+ * üretiyor ve tarayıcı onu SESSİZCE şeffaf yapıyor. Yani `bg-brand/60`,
+ * `bg-gain/12` gibi her tonlama hiç çizilmiyordu — hata vermeden.
+ *
+ * Göreli renk sözdizimi (`rgb(from ... r g b / alpha)`) hex token'i bozmadan
+ * alfayı çalıştırır: modifikatör yokken Tailwind `<alpha-value>` yerine 1
+ * koyar ve renk aynen kalır.
+ */
+function withAlpha(token: string): string {
+  return `rgb(from var(${token}) r g b / <alpha-value>)`;
+}
+
 const config: Config = {
   darkMode: 'class',
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
-        background:  'var(--background)',
-        foreground:  'var(--foreground)',
+        background:  withAlpha('--background'),
+        foreground:  withAlpha('--foreground'),
         card: {
-          DEFAULT:    'var(--card)',
-          foreground: 'var(--card-foreground)',
+          DEFAULT:    withAlpha('--card'),
+          foreground: withAlpha('--card-foreground'),
         },
         popover: {
-          DEFAULT:    'var(--popover)',
-          foreground: 'var(--popover-foreground)',
+          DEFAULT:    withAlpha('--popover'),
+          foreground: withAlpha('--popover-foreground'),
         },
         primary: {
-          DEFAULT:    'var(--primary)',
-          foreground: 'var(--primary-foreground)',
+          DEFAULT:    withAlpha('--primary'),
+          foreground: withAlpha('--primary-foreground'),
         },
         secondary: {
-          DEFAULT:    'var(--secondary)',
-          foreground: 'var(--secondary-foreground)',
+          DEFAULT:    withAlpha('--secondary'),
+          foreground: withAlpha('--secondary-foreground'),
         },
         muted: {
-          DEFAULT:    'var(--muted)',
-          foreground: 'var(--muted-foreground)',
+          DEFAULT:    withAlpha('--muted'),
+          foreground: withAlpha('--muted-foreground'),
         },
         accent: {
-          DEFAULT:    'var(--accent)',
-          foreground: 'var(--accent-foreground)',
+          DEFAULT:    withAlpha('--accent'),
+          foreground: withAlpha('--accent-foreground'),
         },
         destructive: {
-          DEFAULT: 'var(--destructive)',
+          DEFAULT: withAlpha('--destructive'),
         },
-        border: 'var(--border)',
-        input:  'var(--input)',
-        ring:   'var(--ring)',
+        border: withAlpha('--border'),
+        input:  withAlpha('--input'),
+        ring:   withAlpha('--ring'),
         brand: {
-          DEFAULT:    'var(--brand)',
-          foreground: 'var(--brand-foreground)',
+          DEFAULT:    withAlpha('--brand'),
+          foreground: withAlpha('--brand-foreground'),
         },
         gain: {
-          DEFAULT:    'var(--gain)',
-          foreground: 'var(--gain-foreground)',
+          DEFAULT:    withAlpha('--gain'),
+          foreground: withAlpha('--gain-foreground'),
         },
         loss: {
-          DEFAULT:    'var(--loss)',
-          foreground: 'var(--loss-foreground)',
+          DEFAULT:    withAlpha('--loss'),
+          foreground: withAlpha('--loss-foreground'),
         },
         tertiary: {
-          DEFAULT:    'var(--tertiary)',
-          foreground: 'var(--tertiary-foreground)',
+          DEFAULT:    withAlpha('--tertiary'),
+          foreground: withAlpha('--tertiary-foreground'),
         },
         success: {
-          DEFAULT:    'var(--success)',
-          foreground: 'var(--success-foreground)',
+          DEFAULT:    withAlpha('--success'),
+          foreground: withAlpha('--success-foreground'),
         },
         warning: {
-          DEFAULT:    'var(--warning)',
-          foreground: 'var(--warning-foreground)',
+          DEFAULT:    withAlpha('--warning'),
+          foreground: withAlpha('--warning-foreground'),
         },
         chart: {
-          '1': 'var(--chart-1)',
-          '2': 'var(--chart-2)',
-          '3': 'var(--chart-3)',
-          '4': 'var(--chart-4)',
-          '5': 'var(--chart-5)',
-          '6': 'var(--chart-6)',
-          '7': 'var(--chart-7)',
-          '8': 'var(--chart-8)',
+          '1': withAlpha('--chart-1'),
+          '2': withAlpha('--chart-2'),
+          '3': withAlpha('--chart-3'),
+          '4': withAlpha('--chart-4'),
+          '5': withAlpha('--chart-5'),
+          '6': withAlpha('--chart-6'),
+          '7': withAlpha('--chart-7'),
+          '8': withAlpha('--chart-8'),
         },
         sidebar: {
-          DEFAULT:                    'var(--sidebar)',
-          foreground:                 'var(--sidebar-foreground)',
-          primary:                    'var(--sidebar-primary)',
-          'primary-foreground':       'var(--sidebar-primary-foreground)',
-          accent:                     'var(--sidebar-accent)',
-          'accent-foreground':        'var(--sidebar-accent-foreground)',
-          border:                     'var(--sidebar-border)',
-          ring:                       'var(--sidebar-ring)',
+          DEFAULT:                    withAlpha('--sidebar'),
+          foreground:                 withAlpha('--sidebar-foreground'),
+          primary:                    withAlpha('--sidebar-primary'),
+          'primary-foreground':       withAlpha('--sidebar-primary-foreground'),
+          accent:                     withAlpha('--sidebar-accent'),
+          'accent-foreground':        withAlpha('--sidebar-accent-foreground'),
+          border:                     withAlpha('--sidebar-border'),
+          ring:                       withAlpha('--sidebar-ring'),
         },
         surface: {
-          low:     'var(--surface-low)',
-          DEFAULT: 'var(--surface)',
-          high:    'var(--surface-high)',
-          highest: 'var(--surface-highest)',
+          low:     withAlpha('--surface-low'),
+          DEFAULT: withAlpha('--surface'),
+          high:    withAlpha('--surface-high'),
+          highest: withAlpha('--surface-highest'),
         },
         /* Dashboard layout tokens */
-        band:   'var(--band)',
+        band:   withAlpha('--band'),
         panel: {
-          DEFAULT: 'var(--panel)',
-          '2':     'var(--panel2)',
-          '3':     'var(--panel3)',
+          DEFAULT: withAlpha('--panel'),
+          '2':     withAlpha('--panel2'),
+          '3':     withAlpha('--panel3'),
         },
         fg: {
-          DEFAULT: 'var(--fg)',
-          '2':     'var(--fg2)',
+          DEFAULT: withAlpha('--fg'),
+          '2':     withAlpha('--fg2'),
         },
-        mut:      'var(--mut)',
-        sbborder: 'var(--sbborder)',
+        mut:      withAlpha('--mut'),
+        sbborder: withAlpha('--sbborder'),
         /* Hover semantic tokens */
-        'hover-card':         'var(--hover-card)',
-        'hover-surface-high': 'var(--hover-surface-high)',
-        'hover-surface':      'var(--hover-surface)',
-        'hover-row':          'var(--hover-row)',
-        'hover-sidebar-item': 'var(--hover-sidebar-item)',
+        'hover-card':         withAlpha('--hover-card'),
+        'hover-surface-high': withAlpha('--hover-surface-high'),
+        'hover-surface':      withAlpha('--hover-surface'),
+        'hover-row':          withAlpha('--hover-row'),
+        'hover-sidebar-item': withAlpha('--hover-sidebar-item'),
         ds: {
-          primary:           'var(--ds-primary)',
-          'primary-container': 'var(--ds-primary-container)',
-          secondary:         'var(--ds-secondary)',
-          tertiary:          'var(--ds-tertiary)',
+          primary:           withAlpha('--ds-primary'),
+          'primary-container': withAlpha('--ds-primary-container'),
+          secondary:         withAlpha('--ds-secondary'),
+          tertiary:          withAlpha('--ds-tertiary'),
         },
       },
       borderRadius: {
