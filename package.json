@@ -1,6 +1,6 @@
 {
   "name": "@galata-finance/design",
-  "version": "0.1.14",
+  "version": "0.1.16",
   "description": "Galata Finance — shared design system: tokens, components, tailwind preset",
   "type": "module",
   "exports": {
@@ -30,7 +30,7 @@
     "build": "vite build && tsc --emitDeclarationOnly --declaration --outDir dist",
     "dev": "vite build --watch",
     "typecheck": "tsc --noEmit",
-    "sync": "npm run build && cp -r dist/ ../finance-tracker-web/node_modules/@galata-finance/design/dist/ && cp -r src/ ../finance-tracker-web/node_modules/@galata-finance/design/src/ && rm -rf ../finance-tracker-web/node_modules/.vite && echo '✓ Synced + Vite cache cleared'"
+    "sync": "npm run build && cp -r dist/ ../galata-finance-web/node_modules/@galata-finance/design/dist/ && cp -r src/ ../galata-finance-web/node_modules/@galata-finance/design/src/ && rm -rf ../galata-finance-web/node_modules/.vite && echo '✓ Synced + Vite cache cleared'"
   },
   "peerDependencies": {
     "@base-ui/react": ">=1.0.0",
