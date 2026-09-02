@@ -258,6 +258,87 @@
   .nav-item:hover:not(.nav-active) {
     background-color: var(--hover-sidebar-item);
   }
+  /* ── Overlay geçişleri ────────────────────────────────────────────────── */
+  /* Bileşenlerdeki `data-open:animate-in`, `data-starting-style:opacity-0`
+     gibi sınıflar bu projede HİÇBİR ŞEY üretmiyor. `tw-animate-css` ve
+     `shadcn/tailwind.css` Tailwind v4 için yazılmış (`@utility`,
+     `@custom-variant`); proje v3 ve preset'te eklenti yok. Üretim CSS'inde
+     ne `.animate-in` kuralı ne de tek bir `data-starting-style` seçicisi
+     vardı — modal, panel ve menü bir anda beliriyordu. Sözdizimi hatası
+     vermediği için de yıllarca fark edilmez.
+
+     O yüzden geçiş burada yaşıyor: Base UI'ın kendi nitelikleri, düz CSS.
+     Hiçbir eklentiye, hiçbir Tailwind sürümüne bağlı değil.
+
+     Ölçek `transform` ile değil AYRI `scale` özelliğiyle veriliyor:
+     `transform`, Tailwind'in ortalama utility'lerinin (`-translate-x-1/2`)
+     elinde ve utilities katmanı bu katmanı ezerdi.
+
+     Aynı sebeple süreyi de buradan yönetemiyoruz: bileşenlerin kendi
+     `duration-150` / `duration-200` sınıfı utilities katmanında ve buradaki
+     değeri eziyor. Kısayazımdaki süre yalnızca bir taban — hız değişecekse o
+     sınıf değişir. Yumuşama burada kalır, çünkü dialog'un kendi easing
+     sınıfı yok. */
+  [data-slot='dialog-content'] {
+    transition:
+      opacity var(--duration-normal) var(--ease-out),
+      scale var(--duration-normal) var(--ease-out);
+  }
+  [data-slot='dialog-content'][data-starting-style],
+  [data-slot='dialog-content'][data-ending-style] {
+    opacity: 0;
+    scale: 0.97;
+  }
+  [data-slot='dialog-overlay'],
+  [data-slot='sheet-overlay'] {
+    transition: opacity var(--duration-normal) var(--ease-out);
+  }
+  [data-slot='dialog-overlay'][data-starting-style],
+  [data-slot='dialog-overlay'][data-ending-style],
+  [data-slot='sheet-overlay'][data-starting-style],
+  [data-slot='sheet-overlay'][data-ending-style] {
+    opacity: 0;
+  }
+  /* Panel girdiği kenardan gelir; ortadan büyüyen bir panel nereden geldiğini
+     söylemez. Mesafe küçük (2.5rem) — panel zaten kenarda, uzun bir yol
+     kat etmesi gerekmiyor. */
+  [data-slot='sheet-content'] {
+    transition:
+      opacity var(--duration-normal) var(--ease-out),
+      translate var(--duration-normal) var(--ease-out);
+  }
+  [data-slot='sheet-content'][data-starting-style],
+  [data-slot='sheet-content'][data-ending-style] {
+    opacity: 0;
+  }
+  [data-slot='sheet-content'][data-side='right'][data-starting-style],
+  [data-slot='sheet-content'][data-side='right'][data-ending-style] {
+    translate: 2.5rem 0;
+  }
+  [data-slot='sheet-content'][data-side='left'][data-starting-style],
+  [data-slot='sheet-content'][data-side='left'][data-ending-style] {
+    translate: -2.5rem 0;
+  }
+  [data-slot='sheet-content'][data-side='bottom'][data-starting-style],
+  [data-slot='sheet-content'][data-side='bottom'][data-ending-style] {
+    translate: 0 2.5rem;
+  }
+  [data-slot='sheet-content'][data-side='top'][data-starting-style],
+  [data-slot='sheet-content'][data-side='top'][data-ending-style] {
+    translate: 0 -2.5rem;
+  }
+
+  /* Hareketi kapatan kullanıcıda geçiş yok; süre sıfıra indiği için Base UI
+     de kapanışta beklemeden söküyor. */
+  @media (prefers-reduced-motion: reduce) {
+    [data-slot='dialog-content'],
+    [data-slot='dialog-overlay'],
+    [data-slot='sheet-content'],
+    [data-slot='sheet-overlay'] {
+      transition: none;
+    }
+  }
+
 }
 
 @layer utilities {
