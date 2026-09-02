@@ -66,6 +66,14 @@
     --surface-high:         #1c1c1f;
     --surface-highest:      #232327;
 
+    /* Skeleton — yüklenme durumunun KENDİ tokenları.
+       Eskiden shimmer surface-low → surface-high arasında geçiyordu; o iki
+       token'ın eşitlenmesi (light modda ikisi de #f4f4f5) tüm animasyonu
+       sessizce öldürüyordu. Yüklenme hissi, yüzey hiyerarşisinin yan ürünü
+       olamaz — kendi kontrastı olmalı. */
+    --skeleton-base:        #1e1e22;
+    --skeleton-shine:       #2e2e35;
+
     /* Dashboard layout tokens */
     --band:                 #0f0f11;
     --panel:                #141416;
@@ -163,6 +171,11 @@
     --surface:              #ffffff;
     --surface-high:         #f4f4f5;
     --surface-highest:      #e9e9ec;
+
+    /* Hem beyaz kartın (#ffffff) hem gömülü alanın (#f4f4f5) üzerinde
+       görünmek zorunda — bu yüzden ikisinden de koyu. */
+    --skeleton-base:        #e2e2e6;
+    --skeleton-shine:       #f2f2f4;
 
     /* Dashboard layout tokens */
     --band:                 #fafafa;

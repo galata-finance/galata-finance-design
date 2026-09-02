@@ -288,15 +288,28 @@
   .negative     { color: var(--loss); }
 
   /* ── Animations ───────────────────────────────────────────────────────── */
+  /* Yüklenme şeridi.
+     `linear` zorunlu: sonsuz bir döngüye ease-in-out uygulanınca şerit her
+     turun başında yavaşlayıp sonunda hızlanıyor ve göz bunu akış değil,
+     takılma olarak okuyor. */
   .shimmer {
     background: linear-gradient(
       90deg,
-      var(--surface-low) 25%,
-      var(--surface-high) 50%,
-      var(--surface-low) 75%
+      var(--skeleton-base) 25%,
+      var(--skeleton-shine) 50%,
+      var(--skeleton-base) 75%
     );
     background-size: 200% 100%;
-    animation: shimmer var(--duration-slower) var(--ease-default) infinite;
+    animation: shimmer var(--duration-shimmer) linear infinite;
+  }
+
+  /* Hareketi kapatan kullanıcı, yüklendiğini görmekten vazgeçmiş değil —
+     sadece hareketten vazgeçmiş. Şerit durur, blok durur. */
+  @media (prefers-reduced-motion: reduce) {
+    .shimmer {
+      background: var(--skeleton-base);
+      animation: none;
+    }
   }
 
   .value-pulse {
