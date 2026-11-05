@@ -11,6 +11,7 @@ export interface MarketQuoteCardProps {
   priceText: string;
   changePct: number | null;
   periodLabel?: string;
+  historyDescription?: string;
   periodReturnPct?: number | null;
   chart?: React.ReactNode;
   actions?: React.ReactNode;
@@ -19,7 +20,7 @@ export interface MarketQuoteCardProps {
   className?: string;
 }
 
-export function MarketQuoteCard({ title, subtitle, priceText, changePct, periodLabel, periodReturnPct, chart, actions, onSelect, stale, className }: MarketQuoteCardProps) {
+export function MarketQuoteCard({ title, subtitle, priceText, changePct, periodLabel, periodReturnPct, historyDescription, chart, actions, onSelect, stale, className }: MarketQuoteCardProps) {
   const { t, i18n } = useTranslation();
   const percent = (value: number) => `${value.toLocaleString(i18n.resolvedLanguage ?? i18n.language, { minimumFractionDigits: 2, maximumFractionDigits: 2, signDisplay: 'exceptZero' })}%`;
   function select(event: React.MouseEvent<HTMLDivElement>) {
@@ -58,6 +59,7 @@ export function MarketQuoteCard({ title, subtitle, priceText, changePct, periodL
         <span className="text-xs text-muted-foreground">{periodLabel}</span>
         {periodReturnPct == null ? <span className="text-sm text-muted-foreground">—</span> : <DeltaBadge value={periodReturnPct} label={percent(periodReturnPct)} variant="inline" />}
       </div>}
+      {historyDescription && <p className="text-xs text-muted-foreground">{historyDescription}</p>}
     </Card>
   );
 }
