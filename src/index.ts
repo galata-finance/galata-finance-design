@@ -150,3 +150,5 @@ export { MarketQuoteCard } from './components/ui/market-quote-card';
 export type { MarketQuoteCardProps } from './components/ui/market-quote-card';
 export { ComparisonLegend } from './components/ui/comparison-legend';
 export type { ComparisonLegendItem } from './components/ui/comparison-legend';
+export { FinancialStatementTable } from './components/ui/financial-statement-table';
+export type { FinancialStatementTableProps } from './components/ui/financial-statement-table';
