@@ -1,6 +1,6 @@
 # galata-finance-design — Project Instructions
 
-Last updated: 2026-05-31
+Last updated: 2026-11-05
 
 This file is the handoff document for AI tools and developers working on the Galata Finance design system.
 
@@ -15,11 +15,11 @@ The package owns design tokens, shared CSS layers and reusable UI primitives. It
 | Field | Value |
 |---|---|
 | Package | `@galata-finance/design` |
-| Current version | `0.1.6` |
+| Current version | `0.1.23` |
 | Build tool | Vite |
 | Language | TypeScript / React |
 | Styling | Tailwind-compatible CSS tokens and component classes |
-| Primary consumer | `../finance-tracker-web` |
+| Primary consumer | `../galata-finance-web` |
 
 ## Exports
 
