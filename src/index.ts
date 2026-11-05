@@ -145,3 +145,8 @@ export { PageHeader, SectionHeader, MetaSectionHeader } from './components/ui/pa
 export type { PageHeaderProps, SectionHeaderProps, MetaSectionHeaderProps } from './components/ui/page-header';
 export { ChartTooltip }                                from './components/ui/chart-tooltip';
 export type { ChartTooltipProps, TooltipPayloadEntry } from './components/ui/chart-tooltip';
+
+export { MarketQuoteCard } from './components/ui/market-quote-card';
+export type { MarketQuoteCardProps } from './components/ui/market-quote-card';
+export { ComparisonLegend } from './components/ui/comparison-legend';
+export type { ComparisonLegendItem } from './components/ui/comparison-legend';
